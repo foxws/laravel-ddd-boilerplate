@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['https://localhost:*', 'https://[::1]:*', 'https://hub.lan', 'https://hub.lan:5173'],
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 
@@ -27,8 +27,8 @@ return [
 
     'exposed_headers' => ['Content-Length', 'Content-Range', 'Date', 'Precognition'],
 
-    'max_age' => 1728000,
+    'max_age' => 0,
 
-    'supports_credentials' => true,
+    'supports_credentials' => false,
 
 ];
