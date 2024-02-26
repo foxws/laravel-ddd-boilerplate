@@ -2,7 +2,7 @@
 @import '../../vendor/foxws/livewire-use/resources/css/app.css';
 
 /* Vendors */
-@import 'vendor/_all.css';
+/* @import 'vendor/_all.css'; */
 
 /* Styles */
 @import 'base/_all.css';
