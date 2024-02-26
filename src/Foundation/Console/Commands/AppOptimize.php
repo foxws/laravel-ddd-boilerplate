@@ -39,6 +39,11 @@ class AppOptimize extends Command implements Isolatable
         // Optimize cache
         $this->call('structure-scouts:cache');
 
+        // Regenerate IDE helpers
+        $this->call('ide-helper:generate');
+        $this->call('ide-helper:meta');
+        $this->call('ide-helper:models --nowrite');
+
         // Terminate Horizon
         $this->call('horizon:terminate');
     }
