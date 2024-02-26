@@ -15,7 +15,7 @@ class AppOptimize extends Command implements Isolatable
     /**
      * @var string
      */
-    protected $description = 'Optimizes the application';
+    protected $description = 'Optimizes application';
 
     public function handle(): void
     {
@@ -39,21 +39,7 @@ class AppOptimize extends Command implements Isolatable
         // Optimize cache
         $this->call('structure-scouts:cache');
 
-        // Regenerate IDE helpers
-        $this->generateIdeHelpers();
-
         // Terminate Horizon
         $this->call('horizon:terminate');
-    }
-
-    protected function generateIdeHelpers(): void
-    {
-        if (! app()->environment('local')) {
-            return;
-        }
-
-        $this->call('ide-helper:generate');
-        $this->call('ide-helper:meta');
-        $this->call('ide-helper:models --nowrite');
     }
 }
